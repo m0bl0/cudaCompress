@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ArithmeticCPU.cpp" />
+    <ClCompile Include="EncodeCPU.cpp" />
+    <ClCompile Include="EncoderTestSuite.cpp" />
+    <ClCompile Include="GolombRiceCPU.cpp" />
+    <ClCompile Include="HistogramCPU.cpp" />
+    <ClCompile Include="HuffmanCPU.cpp" />
+    <ClCompile Include="HuffmanTableCPU.cpp" />
+    <ClCompile Include="RBUCCPU.cpp" />
+    <ClCompile Include="RunLengthCPU.cpp" />
+    <ClCompile Include="YCoCgCPU.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="tools\stb_image.c">
+      <Filter>tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArithmeticCPU.h" />
+    <ClInclude Include="EncodeCPU.h" />
+    <ClInclude Include="EncoderTestSuite.h" />
+    <ClInclude Include="GolombRiceCPU.h" />
+    <ClInclude Include="HistogramCPU.h" />
+    <ClInclude Include="HuffmanCPU.h" />
+    <ClInclude Include="HuffmanTableCPU.h" />
+    <ClInclude Include="RBUCCPU.h" />
+    <ClInclude Include="RunLengthCPU.h" />
+    <ClInclude Include="YCoCgCPU.h" />
+    <ClInclude Include="tools\Entropy.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\stb_image.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="tools">
+      <UniqueIdentifier>{d8b6799d-3034-470a-8365-d4baacdeb5cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

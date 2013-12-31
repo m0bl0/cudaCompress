@@ -1,0 +1,12 @@
+NEW:
+Laplace pyramid?
+DCT/LOT/LBT?
+static Huffman tables
+
+OPT:
+DWT from/to cudaArray
+byte run lengths?
+multi-row scan with size per row?
+
+CLEAN:
+remove/appendLSB: non-nice sizes

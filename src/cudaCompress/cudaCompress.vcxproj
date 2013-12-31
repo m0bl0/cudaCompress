@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\cudaCompress\BitStream.h" />
+    <ClInclude Include="..\..\include\cudaCompress\Encode.h" />
+    <ClInclude Include="..\..\include\cudaCompress\EncodeCommon.h" />
+    <ClInclude Include="..\..\include\cudaCompress\global.h" />
+    <ClInclude Include="..\..\include\cudaCompress\Instance.h" />
+    <ClInclude Include="..\..\include\cudaCompress\Timing.h" />
+    <ClInclude Include="..\..\include\cudaCompress\util\Bits.h" />
+    <ClInclude Include="..\..\include\cudaCompress\util\CudaTimer.h" />
+    <ClInclude Include="..\..\include\cudaCompress\util\DWT.h" />
+    <ClInclude Include="..\..\include\cudaCompress\util\Quantize.h" />
+    <ClInclude Include="..\..\include\cudaCompress\util\YCoCg.h" />
+    <ClInclude Include="cudaUtil.h" />
+    <ClInclude Include="PackInc.h" />
+    <ClInclude Include="Histogram.h" />
+    <ClInclude Include="HuffmanDesign.h" />
+    <ClInclude Include="Huffman.h" />
+    <ClInclude Include="HuffmanTable.h" />
+    <ClInclude Include="InstanceImpl.h" />
+    <ClInclude Include="profiler\profiler.hpp" />
+    <ClInclude Include="profiler\profilerlogwriter.hpp" />
+    <ClInclude Include="profiler\profilerstreamwriter.hpp" />
+    <ClInclude Include="reduce\reduce_globals.h" />
+    <ClInclude Include="reduce\reduce_plan.h" />
+    <ClInclude Include="RunLength.h" />
+    <ClInclude Include="scan\scan_globals.h" />
+    <ClInclude Include="scan\scan_plan.h" />
+    <ClInclude Include="tools\Functor.h" />
+    <ClInclude Include="tools\Operator.h" />
+    <ClInclude Include="util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Encode.cpp" />
+    <ClCompile Include="InstanceImpl.cpp" />
+    <ClCompile Include="profiler\profiler.cpp" />
+    <ClCompile Include="profiler\profilerlogwriter.cpp" />
+    <ClCompile Include="profiler\profilerstreamwriter.cpp" />
+    <ClCompile Include="reduce\reduce_plan.cpp" />
+    <ClCompile Include="Instance.cpp" />
+    <ClCompile Include="scan\scan_plan.cpp" />
+    <ClCompile Include="Timing.cpp" />
+    <ClCompile Include="util\CudaTimer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BitStreamGPU.cuh" />
+    <None Include="util\DWTCommon.cuh" />
+    <None Include="util\DWTFloat2DLowpassKernels.cui" />
+    <None Include="util\DWTFloatKernels.cui" />
+    <None Include="util\DWTFloatFilters.cuh" />
+    <None Include="util\DWTFloatFromSymbolsKernels.cui" />
+    <None Include="util\DWTInt2DLowpassKernels.cui" />
+    <None Include="util\DWTIntKernels.cui" />
+    <None Include="HistogramKernels.cui" />
+    <None Include="HuffmanKernels.cui" />
+    <None Include="reduce\reduce_app.cui" />
+    <None Include="reduce\reduce_kernel.cui" />
+    <None Include="RunLengthKernels.cui" />
+    <None Include="scan\scan_app.cui" />
+    <None Include="scan\scan_cta.cui" />
+    <None Include="scan\scan_kernel.cui" />
+    <None Include="scan\vector_kernel.cui" />
+    <None Include="util\Quantize.cuh" />
+    <None Include="util\QuantizeKernels.cui" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="PackInc.cu" />
+    <CudaCompile Include="util\DWTFloat.cu" />
+    <CudaCompile Include="util\DWTInt.cu" />
+    <CudaCompile Include="Histogram.cu" />
+    <CudaCompile Include="Huffman.cu" />
+    <CudaCompile Include="HuffmanTable.cu" />
+    <CudaCompile Include="RunLength.cu" />
+    <CudaCompile Include="util\Bits.cu" />
+    <CudaCompile Include="util\Quantize.cu" />
+    <CudaCompile Include="util\YCoCg.cu" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BB11D297-CFCB-48CE-89D9-931A7D637634}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>cudaCompress</RootNamespace>
+    <ProjectName>cudaCompress</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 5.5.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CONSOLE;NOMINMAX;%(PreprocessorDefinitions);CUCOMP_BUILD_DLL;_DEBUG</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <StringPooling>false</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>cudart.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(CudaToolkitBinDir)\cudart64_*.dll" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying the CUDA runtime DLL to the output directory...</Message>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_20,sm_20;compute_30,sm_30</CodeGeneration>
+      <Include>
+      </Include>
+      <PtxAsOptionV>true</PtxAsOptionV>
+      <Defines>
+      </Defines>
+    </CudaCompile>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Outputs>
+      </Outputs>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CONSOLE;NOMINMAX;%(PreprocessorDefinitions);CUCOMP_BUILD_DLL;NDEBUG</PreprocessorDefinitions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StringPooling>false</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>cudart.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(CudaToolkitBinDir)\cudart64_*.dll" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying the CUDA runtime DLL to the output directory...</Message>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <Include>
+      </Include>
+      <CodeGeneration>compute_20,sm_20;compute_30,sm_30</CodeGeneration>
+      <Defines>
+      </Defines>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Outputs>
+      </Outputs>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 5.5.targets" />
+  </ImportGroup>
+</Project>

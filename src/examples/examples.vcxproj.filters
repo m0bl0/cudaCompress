@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tthread">
+      <UniqueIdentifier>{b8bd71be-6dd4-430b-bf23-3f272a56ce76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{13ec2083-22ae-497c-b36a-6156ea53e895}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tthread\tinythread.cpp">
+      <Filter>tthread</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\rawfile.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="CompressHeightfield.cpp" />
+    <ClCompile Include="CompressImage.cpp" />
+    <ClCompile Include="CompressVolume.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GPUResources.cpp" />
+    <ClCompile Include="examples.cpp" />
+    <ClCompile Include="simpleExample.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tthread\tinythread.h">
+      <Filter>tthread</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\entropy.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\imgtools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\rawfile.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="CompressHeightfield.h" />
+    <ClInclude Include="CompressImage.h" />
+    <ClInclude Include="CompressVolume.h" />
+    <ClInclude Include="cudaUtil.h" />
+    <ClInclude Include="examples.h" />
+    <ClInclude Include="GPUResources.h" />
+    <ClInclude Include="global.h" />
+  </ItemGroup>
+</Project>

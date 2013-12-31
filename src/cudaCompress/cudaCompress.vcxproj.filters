@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Encode.cpp" />
+    <ClCompile Include="scan\scan_plan.cpp">
+      <Filter>scan</Filter>
+    </ClCompile>
+    <ClCompile Include="reduce\reduce_plan.cpp">
+      <Filter>reduce</Filter>
+    </ClCompile>
+    <ClCompile Include="Timing.cpp" />
+    <ClCompile Include="profiler\profiler.cpp">
+      <Filter>profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="profiler\profilerlogwriter.cpp">
+      <Filter>profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="profiler\profilerstreamwriter.cpp">
+      <Filter>profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="util\CudaTimer.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceImpl.cpp" />
+    <ClCompile Include="Instance.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="util.h" />
+    <ClInclude Include="HuffmanDesign.h" />
+    <ClInclude Include="Histogram.h" />
+    <ClInclude Include="Huffman.h" />
+    <ClInclude Include="HuffmanTable.h" />
+    <ClInclude Include="RunLength.h" />
+    <ClInclude Include="cudaUtil.h" />
+    <ClInclude Include="scan\scan_globals.h">
+      <Filter>scan</Filter>
+    </ClInclude>
+    <ClInclude Include="scan\scan_plan.h">
+      <Filter>scan</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\Operator.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\Functor.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="reduce\reduce_plan.h">
+      <Filter>reduce</Filter>
+    </ClInclude>
+    <ClInclude Include="reduce\reduce_globals.h">
+      <Filter>reduce</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler\profiler.hpp">
+      <Filter>profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler\profilerlogwriter.hpp">
+      <Filter>profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler\profilerstreamwriter.hpp">
+      <Filter>profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="PackInc.h" />
+    <ClInclude Include="..\..\include\cudaCompress\BitStream.h" />
+    <ClInclude Include="..\..\include\cudaCompress\Encode.h" />
+    <ClInclude Include="..\..\include\cudaCompress\EncodeCommon.h" />
+    <ClInclude Include="..\..\include\cudaCompress\global.h" />
+    <ClInclude Include="..\..\include\cudaCompress\Timing.h" />
+    <ClInclude Include="..\..\include\cudaCompress\util\Bits.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cudaCompress\util\DWT.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cudaCompress\util\Quantize.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cudaCompress\util\YCoCg.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cudaCompress\util\CudaTimer.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="InstanceImpl.h" />
+    <ClInclude Include="..\..\include\cudaCompress\Instance.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="tools">
+      <UniqueIdentifier>{105eb70f-572c-4eab-a7cf-48c0a13d5e21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scan">
+      <UniqueIdentifier>{2499ecc4-989b-4916-a58c-050fd0483897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="reduce">
+      <UniqueIdentifier>{08ea668b-b3e8-45ed-a349-553c139e614f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="profiler">
+      <UniqueIdentifier>{19884822-44b1-40bf-93e2-f7f7996a9f08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{e3bb60fd-7b60-4d01-8cc8-4cc923a0982f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BitStreamGPU.cuh" />
+    <None Include="HistogramKernels.cui" />
+    <None Include="HuffmanKernels.cui" />
+    <None Include="util\DWTCommon.cuh">
+      <Filter>util</Filter>
+    </None>
+    <None Include="util\DWTFloat2DLowpassKernels.cui">
+      <Filter>util</Filter>
+    </None>
+    <None Include="util\DWTFloatFilters.cuh">
+      <Filter>util</Filter>
+    </None>
+    <None Include="util\DWTInt2DLowpassKernels.cui">
+      <Filter>util</Filter>
+    </None>
+    <None Include="util\DWTFloatKernels.cui">
+      <Filter>util</Filter>
+    </None>
+    <None Include="util\DWTFloatFromSymbolsKernels.cui">
+      <Filter>util</Filter>
+    </None>
+    <None Include="util\DWTIntKernels.cui">
+      <Filter>util</Filter>
+    </None>
+    <None Include="scan\scan_app.cui">
+      <Filter>scan</Filter>
+    </None>
+    <None Include="scan\scan_cta.cui">
+      <Filter>scan</Filter>
+    </None>
+    <None Include="scan\scan_kernel.cui">
+      <Filter>scan</Filter>
+    </None>
+    <None Include="scan\vector_kernel.cui">
+      <Filter>scan</Filter>
+    </None>
+    <None Include="reduce\reduce_kernel.cui">
+      <Filter>reduce</Filter>
+    </None>
+    <None Include="reduce\reduce_app.cui">
+      <Filter>reduce</Filter>
+    </None>
+    <None Include="RunLengthKernels.cui" />
+    <None Include="util\Quantize.cuh">
+      <Filter>util</Filter>
+    </None>
+    <None Include="util\QuantizeKernels.cui">
+      <Filter>util</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="Histogram.cu" />
+    <CudaCompile Include="Huffman.cu" />
+    <CudaCompile Include="HuffmanTable.cu" />
+    <CudaCompile Include="RunLength.cu" />
+    <CudaCompile Include="util\DWTFloat.cu">
+      <Filter>util</Filter>
+    </CudaCompile>
+    <CudaCompile Include="util\DWTInt.cu">
+      <Filter>util</Filter>
+    </CudaCompile>
+    <CudaCompile Include="util\Bits.cu">
+      <Filter>util</Filter>
+    </CudaCompile>
+    <CudaCompile Include="util\Quantize.cu">
+      <Filter>util</Filter>
+    </CudaCompile>
+    <CudaCompile Include="util\YCoCg.cu">
+      <Filter>util</Filter>
+    </CudaCompile>
+    <CudaCompile Include="PackInc.cu" />
+  </ItemGroup>
+</Project>
