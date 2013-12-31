@@ -1,0 +1,12 @@
+/out.raw
+/info.txt
+/*.sdf
+/*.opensdf
+/bin
+/x64
+/src/CPU/x64
+/src/cudaCompress/x64
+/src/examples/x64
+
+/src/cudaCompress/vc110.pdb
+/*.suo
